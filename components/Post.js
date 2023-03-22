@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import Image from 'next/image'
 import cn from 'classnames'
-import BLOG from '@/blog.config'
+import config from '@/lib/config'
 import useTheme from '@/lib/theme'
 import formatDate from '@/lib/formatDate'
 import TagItem from '@/components/TagItem'
@@ -20,6 +20,8 @@ import TableOfContents from '@/components/TableOfContents'
  * @prop {boolean} [fullWidth] - Whether in full-width mode
  */
 export default function Post (props) {
+  const BLOG = config()
+
   const { post, blockMap, emailHash, fullWidth = false } = props
   const { dark } = useTheme()
 

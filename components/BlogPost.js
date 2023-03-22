@@ -1,8 +1,10 @@
 import Link from 'next/link'
-import BLOG from '@/blog.config'
+import config from '@/lib/config'
 import formatDate from '@/lib/formatDate'
 
 const BlogPost = ({ post }) => {
+  const BLOG = config()
+
   return (
     <Link href={`${BLOG.path}/${post.slug}`}>
       <article key={post.id} className="mb-6 md:mb-8">

@@ -1,5 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import BLOG from '@/blog.config'
+import config from '@/lib/config'
 import CJK from '@/lib/cjk'
 class MyDocument extends Document {
   static async getInitialProps (ctx) {
@@ -8,6 +8,8 @@ class MyDocument extends Document {
   }
 
   render () {
+    const BLOG = config()
+
     return (
       <Html lang={BLOG.lang}>
         <Head>
